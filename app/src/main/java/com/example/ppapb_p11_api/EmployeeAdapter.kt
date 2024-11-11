@@ -17,8 +17,8 @@ import com.example.ppapb_p11_api.HomeFragment
 
 class EmployeeAdapter(
     private val context: Context,
-    private val employees: List<Data>,
-    private val fragment: HomeFragment // Menambahkan referensi ke fragment
+    private val employees: MutableList<Data>,
+    private val fragment: HomeFragment
 ) : RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmployeeViewHolder {
@@ -43,7 +43,11 @@ class EmployeeAdapter(
 
     override fun getItemCount(): Int = employees.size
 
-    fun getEmployees(): List<Data> = employees
+    fun updateData(newData: List<Data>) {
+        employees.clear()
+        employees.addAll(newData)
+        notifyDataSetChanged()
+    }
 
     class EmployeeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivAvatar: ImageView = itemView.findViewById(R.id.ivAvatar)

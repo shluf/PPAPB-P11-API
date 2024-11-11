@@ -38,8 +38,6 @@ class DetailFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-
-
     }
 
 
