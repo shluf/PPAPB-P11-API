@@ -1,7 +1,10 @@
 package com.example.ppapb_p11_api.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Data(
     @SerializedName("id")
     val id: Int,
@@ -17,4 +20,4 @@ data class Data(
 
     @SerializedName("avatar")
     val profileImage: String
-)
+) : Parcelable
